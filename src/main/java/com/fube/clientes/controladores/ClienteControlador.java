@@ -3,9 +3,13 @@ package com.fube.clientes.controladores;
 import com.fube.clientes.dto.ClienteDTO;
 import com.fube.clientes.mapper.ClienteMapper;
 import com.fube.clientes.servicios.ClienteServicio;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController()
+@RequestMapping("/api/clientes")
 public class ClienteControlador {
 
     private final ClienteServicio servicio;
@@ -14,24 +18,29 @@ public class ClienteControlador {
         this.servicio = servicio;
     }
 
-    public ClienteDTO crear(ClienteDTO clienteDTO) {
+    @PostMapping
+    public ClienteDTO crear(@RequestBody @Valid ClienteDTO clienteDTO) {
         return servicio.crear(ClienteMapper.toEntity(clienteDTO));
     }
 
-    public ClienteDTO buscarPorId(Long id) {
+    @GetMapping("/{id}")
+    public ClienteDTO buscarPorId(@PathVariable Long id) {
         return servicio.buscarPorId(id);
     }
 
+    @GetMapping
     public List<ClienteDTO> buscarTodos() {
         return servicio.buscarTodos();
     }
 
-    public ClienteDTO actualizar(Long id, ClienteDTO clienteDTO) {
+    @PutMapping("/{id}")
+    public ClienteDTO actualizar(@PathVariable Long id, @RequestBody @Valid ClienteDTO clienteDTO) {
         clienteDTO.setId(id);
         return servicio.actualizar(ClienteMapper.toEntity(clienteDTO));
     }
 
-    public void eliminar(Long id) {
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) {
         servicio.eliminar(id);
     }
 }

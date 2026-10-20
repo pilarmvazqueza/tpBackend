@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "clientes")
 @Data
@@ -33,4 +35,6 @@ public class Cliente {
     @Column
     private String direccion;
 
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime fechaAlta;
 }

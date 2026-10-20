@@ -14,6 +14,7 @@ public class ClienteMapper {
                 .email(cliente.getEmail())
                 .telefono(cliente.getTelefono())
                 .direccion(cliente.getDireccion())
+                .fechaAlta(cliente.getFechaAlta())
                 .build();
 
     }

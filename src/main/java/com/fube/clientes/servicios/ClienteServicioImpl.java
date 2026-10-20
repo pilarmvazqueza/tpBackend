@@ -1,11 +1,13 @@
 package com.fube.clientes.servicios;
 
 import com.fube.clientes.dto.ClienteDTO;
+import com.fube.clientes.excepciones.ClienteNoEncontradoException;
 import com.fube.clientes.mapper.ClienteMapper;
 import com.fube.clientes.modelos.Cliente;
 import com.fube.clientes.repositorio.ClienteRepositorio;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -19,6 +21,7 @@ public class ClienteServicioImpl implements ClienteServicio {
 
     @Override
     public ClienteDTO crear(Cliente cliente) {
+        cliente.setFechaAlta(LocalDateTime.now());
         return ClienteMapper.toDTO(repositorio.save(cliente));
     }
 
@@ -26,7 +29,7 @@ public class ClienteServicioImpl implements ClienteServicio {
     public ClienteDTO buscarPorId(Long id) {
         return repositorio.findById(id)
                 .map(ClienteMapper::toDTO)
-                .orElseThrow(() -> new RuntimeException("Cliente no encontrado con id: " + id));
+                .orElseThrow(() -> new ClienteNoEncontradoException(id));
     }
 
     @Override
@@ -38,6 +41,9 @@ public class ClienteServicioImpl implements ClienteServicio {
 
     @Override
     public ClienteDTO actualizar(Cliente cliente) {
+        Cliente clienteViejo = repositorio.findById(cliente.getId())
+                .orElseThrow(() -> new ClienteNoEncontradoException(cliente.getId()));
+        cliente.setFechaAlta(clienteViejo.getFechaAlta());
         return ClienteMapper.toDTO(repositorio.save(cliente));
     }
 
