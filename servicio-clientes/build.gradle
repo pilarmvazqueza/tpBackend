@@ -9,7 +9,7 @@ group = 'com.fube'
 version = '1.0-SNAPSHOT'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_25
+    sourceCompatibility = JavaVersion.VERSION_17
 }
 
 jacoco {
@@ -33,6 +33,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.38'
 
     runtimeOnly 'org.postgresql:postgresql'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.mock-server:mockserver-netty:5.15.0'

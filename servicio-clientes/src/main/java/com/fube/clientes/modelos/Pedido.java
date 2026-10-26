@@ -1,5 +1,10 @@
 package com.fube.clientes.modelos;
 
+import jakarta.persistence.*;
+
+import java.util.Date;
+
+
 @Entity
 @Table(name = "pedidos")
 public class Pedido {

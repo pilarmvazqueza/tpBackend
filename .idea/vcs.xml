@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="//10.1.2.11/UTN/2026/desarrolloBackend_E/tpBackend" vcs="Git" />
   </component>
 </project>

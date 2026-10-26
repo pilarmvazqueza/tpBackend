@@ -1,5 +1,6 @@
 package com.fube.clientes.modelos;
 
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "productos")
