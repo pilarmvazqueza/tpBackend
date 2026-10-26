@@ -1,6 +1,6 @@
 package com.fube.clientes.controladores;
 
-import com.fube.clientes.servicios.InventarioServicio;
+import com.fube.clientes.servicios.InventarioServicioImpl;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/inventario")
 public class InventarioControlador {
 
-    private final InventarioServicio servicio;
+    private final InventarioServicioImpl servicio;
 
 
-    public InventarioControlador(InventarioServicio servicio) {
+    public InventarioControlador(InventarioServicioImpl servicio) {
         this.servicio = servicio;
     }
+
+
 }

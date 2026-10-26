@@ -1,7 +1,9 @@
 package com.fube.clientes.modelos;
 
+import jakarta.persistence.*;
+
 @Entity
-@Table(name = "ItemPedidos")
+@Table(name = "itemPedidos")
 public class ItemPedido {
 
     @Id
