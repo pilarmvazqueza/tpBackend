@@ -3,8 +3,15 @@ package com.fube.clientes.dto;
 import com.fube.clientes.modelos.EstadoReserva;
 import com.fube.clientes.modelos.Pedido;
 import com.fube.clientes.modelos.Producto;
-import jakarta.persistence.Column;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ReservaDTO {
     private Long id;
 
@@ -15,19 +22,6 @@ public class ReservaDTO {
     private Integer cantidad;
 
     private EstadoReserva estado;
-
-
-    //constructores
-    public ReservaDTO() {
-    }
-
-    public ReservaDTO(Long id, Producto producto, Pedido pedido, Integer cantidad, EstadoReserva estado) {
-        this.id = id;
-        this.producto=producto;
-        this.pedido=pedido;
-        this.cantidad=cantidad;
-        this.estado=estado;
-    }
 
 
     //getters

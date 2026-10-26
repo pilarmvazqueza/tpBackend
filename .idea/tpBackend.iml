@@ -16,5 +16,16 @@
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:3.3.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-web:6.1.8" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:3.3.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.17.1" level="project" />
+    <orderEntry type="library" name="Gradle: jakarta.validation:jakarta.validation-api:3.0.2" level="project" />
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

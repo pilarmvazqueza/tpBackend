@@ -1,12 +1,20 @@
 package com.fube.clientes.modelos;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 
 @Entity
 @Table(name = "pedidos")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,20 +36,6 @@ public class Pedido {
     private Date fechaActualizacion;
 
 
-    //constructores
-
-
-    public Pedido() {
-    }
-
-    public Pedido(Long id, Integer clienteId, EstadoPedido estado,
-                  double montoTotal, Date fechaCreacion, Date fechaActualizacion) {
-        this.id = id;
-        this.clienteId=clienteId;
-        this.estado=estado;
-        this.fechaCreacion=fechaCreacion;
-        this.fechaActualizacion=fechaActualizacion;
-    }
 
     //getters
     public Long getId() {

@@ -1,9 +1,17 @@
 package com.fube.clientes.modelos;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "productos")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,18 +22,6 @@ public class Producto {
 
     @Column(nullable = false)
     private Integer cantidadDisponible;
-
-
-    //constructores
-
-    public Producto() {
-    }
-
-    public Producto(Long id, String nombre, Integer cantidadDisponible) {
-        this.id = id;
-        this.nombre=nombre;
-        this.cantidadDisponible=cantidadDisponible;
-    }
 
 
     //getters

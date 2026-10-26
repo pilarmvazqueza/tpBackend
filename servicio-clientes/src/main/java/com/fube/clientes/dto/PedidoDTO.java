@@ -1,13 +1,17 @@
 package com.fube.clientes.dto;
 
 import com.fube.clientes.modelos.EstadoPedido;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PedidoDTO {
 
     private Long id;
@@ -23,20 +27,6 @@ public class PedidoDTO {
     private Date fechaActualizacion;
 
 
-    //constructores
-
-
-    public PedidoDTO() {
-    }
-
-    public PedidoDTO(Long id, Integer clienteId, EstadoPedido estado,
-                  double montoTotal, Date fechaCreacion, Date fechaActualizacion) {
-        this.id = id;
-        this.clienteId=clienteId;
-        this.estado=estado;
-        this.fechaCreacion=fechaCreacion;
-        this.fechaActualizacion=fechaActualizacion;
-    }
 
     //getters
     public Long getId() {

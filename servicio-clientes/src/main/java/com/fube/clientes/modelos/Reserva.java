@@ -1,10 +1,18 @@
 package com.fube.clientes.modelos;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
 @Table(name = "reservas")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,19 +29,6 @@ public class Reserva {
 
     @Column(nullable = false)
     private EstadoReserva estado;
-
-
-    //constructores
-    public Reserva() {
-    }
-
-    public Reserva(Long id, Producto producto, Pedido pedido, Integer cantidad, EstadoReserva estado) {
-        this.id = id;
-        this.producto=producto;
-        this.pedido=pedido;
-        this.cantidad=cantidad;
-        this.estado=estado;
-    }
 
 
     //getters
