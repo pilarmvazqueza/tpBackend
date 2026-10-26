@@ -4,5 +4,5 @@ import com.fube.clientes.dto.ProductoDTO;
 
 public interface InventarioServicio {
 
-    ProductoDTO consultarStock (Long Id);
+    Integer consultarStock (Long Id);
 }

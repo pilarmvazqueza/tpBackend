@@ -18,11 +18,13 @@ public class InventarioServicioImpl implements InventarioServicio {
     }
 
     @Override
-    public ProductoDTO consultarStock(Long Id) {
-        return repoProducto.findById(Id)
-                .map(ProductoMapper::toDTO)
+    public Integer consultarStock(Long Id) {
+        Producto producto = repoProducto.findById(Id)
+                //.map(ProductoMapper::toDTO)
                 .orElseThrow(() -> new ProductoNoEncontradoExcepcion(Id));
 
+        //aca devolvemos el stock del producto
+        return producto.getCantidadDisponible();
     }
 
 }
